@@ -6,7 +6,7 @@
 
 body {
     font-family: Inter, sans-serif;
-    color: #2C2C2C;
+    color: #c4b2b2;
     background-color: #1f1f1f;
 }
 
@@ -17,7 +17,7 @@ body {
 }
 
 header {
-    background: #fff;
+    background: #1f1f1f;
     padding: 20px 0;
     border-bottom: 1px solid #eee;
 }
@@ -97,7 +97,7 @@ nav a {
 
 .services {
     padding: 80px 0;
-    background: #fafafa;
+    background: #1f1f1f;
 }
 
 .services-grid {
@@ -109,7 +109,7 @@ nav a {
 
 .card {
     padding: 20px;
-    background: #fff;
+    background: #1f1f1f;
     border-radius: 12px;
     text-align: center;
     border: 1px solid #eee;
@@ -147,7 +147,7 @@ nav a {
 
 .contacts {
     padding: 80px 0;
-    background: #fafafa;
+    background: #1f1f1f;
 }
 
 .contacts-grid {
@@ -219,7 +219,7 @@ footer {
         right: -100%;
         width: 60%;
         height: 100%;
-        background: #fff;
+        background: #1f1f1f;
         padding: 100px 20px;
         transition: 0.3s;
         box-shadow: -2px 0 10px rgba(0,0,0,0.15);
