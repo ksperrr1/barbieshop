@@ -1,0 +1,277 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    color: #2C2C2C;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2C2C2C;
+    font-weight: 500;
+}
+
+.burger {
+    width: 30px;
+    height: 22px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    background: #2C2C2C;
+    border-radius: 3px;
+}
+
+.btn {
+    background: #D19FFF;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    height: 90vh;
+    background: url('../img/hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.hero-content {
+    max-width: 500px;
+    h1, p {
+        text-shadow: #2c2c2c 1px 1px 4px;
+    }
+}
+
+.about {
+    padding: 80px 0;
+}
+
+.about-grid {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about img {
+    width: 50%;
+    border-radius: 12px;
+    width: 300px;
+}
+
+.services {
+    padding: 80px 0;
+    background: #fafafa;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background: #D19FFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.portfolio {
+    padding: 80px 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.portfolio-grid img {
+    width: 100%;
+    border-radius: 10px;
+    height: 400px; 
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.contacts {
+    padding: 80px 0;
+    background: #fafafa;
+}
+
+.contacts-grid {
+    display: flex;
+    gap: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+form input, form select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 12px;
+    background: #FFB3D9;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    background: #2C2C2C;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .about-grid, .contacts-grid {
+        flex-direction: column;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        display: none;
+    }
+
+    .services-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about img {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100%;
+        background: #fff;
+        padding: 100px 20px;
+        transition: 0.3s;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+    }
+
+    nav.open {
+        right: 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        font-size: 20px;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .header-btn {
+        display: none; 
+    }
+}
+.to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #D19FFF;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.to-top.show {
+    opacity: 1;
+    visibility: visible;
+    bottom: 40px;
+}
+
+.to-top:hover {
+    background: #C07BEF;
+}
