@@ -183,6 +183,67 @@ footer {
     color: #fff;
 }
 
+button,
+.btn {
+    transition: 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #c07bef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+button:active,
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    opacity: 0.9;
+}
+
+nav a {
+    position: relative;
+    transition: 0.25s;
+}
+
+nav a:hover {
+    color: #D19FFF;
+}
+
+nav a:active {
+    color: #b46de0;
+    transform: scale(0.97);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #D19FFF;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.burger {
+    transition: 0.25s;
+}
+
+.burger:hover {
+    transform: scale(1.05);
+}
+
+.burger:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
 @media (max-width: 900px) {
     .about-grid, .contacts-grid {
         flex-direction: column;
