@@ -6,8 +6,8 @@
 
 body {
     font-family: Inter, sans-serif;
-    color: #c4b2b2;
-    background-color: #1f1f1f;
+    background-color: #121212;
+    color: #E0E0E0;
 }
 
 .container {
@@ -17,9 +17,9 @@ body {
 }
 
 header {
-    background: #1f1f1f;
+    background: #121212;
     padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #2A2A2A;
 }
 
 .header-inner {
@@ -36,8 +36,34 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #2C2C2C;
+    color: #E0E0E0;
     font-weight: 500;
+    position: relative;
+    transition: 0.25s;
+}
+
+nav a:hover {
+    color: #C57BFF;
+}
+
+nav a:active {
+    color: #A75BEA;
+    transform: scale(0.97);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #C57BFF;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 
 .burger {
@@ -47,21 +73,49 @@ nav a {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    transition: 0.25s;
 }
 
 .burger span {
     display: block;
     height: 3px;
-    background: #2C2C2C;
+    background: #E0E0E0;
     border-radius: 3px;
 }
 
-.btn {
-    background: #D19FFF;
+.burger:hover {
+    transform: scale(1.05);
+}
+
+.burger:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+.btn,
+button {
+    background: #C57BFF;
     padding: 10px 20px;
     border-radius: 10px;
     color: #fff;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #A75BEA;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(197, 123, 255, 0.25);
+}
+
+button:active,
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(167, 91, 234, 0.3);
+    opacity: 0.9;
 }
 
 .hero {
@@ -74,13 +128,16 @@ nav a {
 
 .hero-content {
     max-width: 500px;
-    h1, p {
-        text-shadow: #2c2c2c 1px 1px 4px;
-    }
+}
+
+.hero-content h1,
+.hero-content p {
+    text-shadow: #000 1px 1px 4px;
 }
 
 .about {
     padding: 80px 0;
+    background: #121212;
 }
 
 .about-grid {
@@ -90,14 +147,13 @@ nav a {
 }
 
 .about img {
-    width: 50%;
-    border-radius: 12px;
     width: 300px;
+    border-radius: 12px;
 }
 
 .services {
     padding: 80px 0;
-    background: #1f1f1f;
+    background: #121212;
 }
 
 .services-grid {
@@ -109,25 +165,16 @@ nav a {
 
 .card {
     padding: 20px;
-    background: #1f1f1f;
+    background: #1E1E1E;
     border-radius: 12px;
     text-align: center;
-    border: 1px solid #eee;
-}
-
-.card button {
-    margin-top: 10px;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    background: #D19FFF;
-    color: #fff;
-    cursor: pointer;
+    border: 1px solid #2A2A2A;
+    color: #E0E0E0;
 }
 
 .portfolio {
     padding: 80px 0;
+    background: #121212;
 }
 
 .portfolio-grid {
@@ -138,16 +185,15 @@ nav a {
 
 .portfolio-grid img {
     width: 100%;
-    border-radius: 10px;
-    height: 400px; 
-    object-fit: cover;
+    height: 400px;
     border-radius: 12px;
+    object-fit: cover;
     display: block;
 }
 
 .contacts {
     padding: 80px 0;
-    background: #1f1f1f;
+    background: #121212;
 }
 
 .contacts-grid {
@@ -162,90 +208,61 @@ form {
     flex: 1;
 }
 
-form input, form select {
+form input,
+form select {
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #2A2A2A;
+    background: #1E1E1E;
+    color: #E0E0E0;
 }
 
 form button {
-    padding: 12px;
-    background: #FFB3D9;
-    border: none;
-    border-radius: 8px;
-    color: #fff;
+    background: #C57BFF;
 }
 
 footer {
     padding: 20px 0;
     text-align: center;
-    background: #2C2C2C;
+    background: #1E1E1E;
+    color: #B3B3B3;
+}
+
+.to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #C57BFF;
     color: #fff;
-}
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(197, 123, 255, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-button,
-.btn {
-    transition: 0.25s ease;
-}
-
-button:hover,
-.btn:hover {
-    background-color: #c07bef;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-button:active,
-.btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    opacity: 0.9;
-}
-
-nav a {
-    position: relative;
-    transition: 0.25s;
-}
-
-nav a:hover {
-    color: #D19FFF;
-}
-
-nav a:active {
-    color: #b46de0;
-    transform: scale(0.97);
-}
-
-nav a::after {
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: #D19FFF;
+    opacity: 0;
+    visibility: hidden;
     transition: 0.3s;
+    z-index: 999;
 }
 
-nav a:hover::after {
-    width: 100%;
+.to-top.show {
+    opacity: 1;
+    visibility: visible;
+    bottom: 40px;
 }
 
-.burger {
-    transition: 0.25s;
+.to-top:hover {
+    background: #A75BEA;
 }
-
-.burger:hover {
-    transform: scale(1.05);
-}
-
-.burger:active {
-    transform: scale(0.95);
-    opacity: 0.8;
-}
-
 @media (max-width: 900px) {
-    .about-grid, .contacts-grid {
+    .about-grid, 
+    .contacts-grid {
         flex-direction: column;
     }
 
@@ -255,6 +272,10 @@ nav a:hover::after {
 
     .portfolio-grid {
         grid-template-columns: repeat(2,1fr);
+    }
+
+    .about img {
+        width: 100%;
     }
 }
 
@@ -272,18 +293,18 @@ nav a:hover::after {
         width: 100%;
     }
 }
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
     nav {
         position: fixed;
         top: 0;
         right: -100%;
         width: 60%;
         height: 100%;
-        background: #1f1f1f;
+        background: #121212;
         padding: 100px 20px;
         transition: 0.3s;
-        box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+        box-shadow: -2px 0 10px rgba(0,0,0,0.4);
     }
 
     nav.open {
@@ -302,38 +323,6 @@ nav a:hover::after {
     }
 
     .header-btn {
-        display: none; 
+        display: none;
     }
-}
-.to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    background: #D19FFF;
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-    z-index: 999;
-}
-
-.to-top.show {
-    opacity: 1;
-    visibility: visible;
-    bottom: 40px;
-}
-
-.to-top:hover {
-    background: #C07BEF;
 }
